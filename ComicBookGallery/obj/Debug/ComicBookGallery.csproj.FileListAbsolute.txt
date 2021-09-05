@@ -1,0 +1,2 @@
+C:\Users\britt\Desktop\Local Repos\TreehouseMVC\ComicBookGallery\obj\Debug\ComicBookGallery.csprojAssemblyReference.cache
+C:\Users\britt\Desktop\Local Repos\TreehouseMVC\ComicBookGallery\obj\Debug\ComicBookGallery.csproj.CoreCompileInputs.cache
