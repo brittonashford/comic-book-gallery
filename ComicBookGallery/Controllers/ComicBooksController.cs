@@ -19,3 +19,7 @@ namespace ComicBookGallery.Controllers
 
 //TODO:
 //Learn about other ActionResult types provided by MVC
+
+
+//NOTES:
+//Controller base class' View() method returns a ViewResult object from an action method
