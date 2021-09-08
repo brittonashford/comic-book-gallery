@@ -1,19 +1,29 @@
-﻿using ComicBookGallery.Models;
+﻿using ComicBookGallery.Data;
+using ComicBookGallery.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
-        public ActionResult Detail()
-        {
-            
-            
+        private ComicBookRepository _comicBookRepository = null;
 
+        public ComicBooksController()
+        {
+            _comicBookRepository = new ComicBookRepository();
+        }
+        public ActionResult Detail(int? id)
+        {
+            if(id == null)
+            {
+                return HttpNotFound();
+            }
+            var comicBook = _comicBookRepository.GetComicBook(id.Value);          
             return View(comicBook);
         }
     }
@@ -36,3 +46,10 @@ namespace ComicBookGallery.Controllers
 
 //Strongly typed view is an MVC view that is Associated with a specific type
 //    exposes model instance through its model property
+
+//private fields should begin with an underscore and a lower case letter
+
+//contructors are special methods used to instantiate instance members
+//don't have return types and have the same name as the class
+
+//url path = controller/action/id(optional)
