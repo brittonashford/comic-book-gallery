@@ -17,6 +17,14 @@ namespace ComicBookGallery.Controllers
         {
             _comicBookRepository = new ComicBookRepository();
         }
+
+        public ActionResult Index()
+        {
+            var comicBooks = _comicBookRepository.GetComicBooks();
+            return View(comicBooks);
+            //makes array accessible through View's Model property
+        }
+
         public ActionResult Detail(int? id)
         {
             if(id == null)
@@ -33,6 +41,7 @@ namespace ComicBookGallery.Controllers
 
 //TODO:
 //Learn about other ActionResult types provided by MVC
+//understand Return View()
 
 
 //NOTES:
