@@ -8,11 +8,20 @@
     @foreach (var comicBook in Model)
     {
         <div class="col-md-3">
-            <h4>@comicBook.DisplayText</h4>
-            <img src="/Images/@comicBook.CoverImageFileName"
-                 alt="@comicBook.DisplayText"
-                 class="img-responsive" />
+            <h4>@Html.ActionLink((string)comicBook.DisplayText, "Detail", 
+               new { id = comicBook.Id })</h4>
+            <a href="@Url.Action("Detail", new { id = comicBook.Id })">
+                <img src="/Images/@comicBook.CoverImageFileName"
+                     alt="@comicBook.DisplayText"
+                     class="img-responsive" />
+            </a>
         </div>
     }
 
 </div>
+
+
+@* TODO
+    learn about Html.ActionLink() 
+    anonymous type
+        instantiate without defining class*@
